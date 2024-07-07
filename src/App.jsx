@@ -4,6 +4,11 @@ import Signup from "./pages/Signup.jsx";
 import Home from "./pages/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import Announcements from "./pages/Announcements.jsx";
+import Connect from "./pages/Connect.jsx";
+import Coordinators from "./pages/Coordinators.jsx";
+import Events from "./pages/Events.jsx";
+import Feedback from "./pages/Feedback.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +28,26 @@ const router = createBrowserRouter([
   {
     path: "signup",
     element: <Signup />,
+  },
+  {
+    path: "announcement",
+    element: <Announcements />,
+  },
+  {
+    path: "connect",
+    element: <Connect />,
+  },
+  {
+    path: "coordinators",
+    element: <Coordinators />,
+  },
+  {
+    path: "events",
+    element: <Events/>,
+  },
+  {
+    path: "feedback",
+    element: <Feedback />,
   },
 ]);
 
