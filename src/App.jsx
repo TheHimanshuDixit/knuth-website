@@ -9,6 +9,7 @@ import Connect from "./pages/Connect.jsx";
 import Coordinators from "./pages/Coordinators.jsx";
 import Events from "./pages/Events.jsx";
 import Feedback from "./pages/Feedback.jsx";
+import POD from "./pages/POD.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "feedback",
     element: <Feedback />,
+  },
+  {
+    path: "pod",
+    element: <POD />,
   },
 ]);
 
