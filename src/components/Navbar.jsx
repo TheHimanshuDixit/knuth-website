@@ -1,17 +1,35 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [checked, setChecked] = useState("home");
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === "/") {
+      setChecked("home");
+    } else if (path === "/events") {
+      setChecked("events");
+    } else if (path === "/coordinators") {
+      setChecked("coordinators");
+    } else if (path === "/announcement") {
+      setChecked("announcement");
+    } else if (path === "/connect") {
+      setChecked("connect");
+    } else if (path === "/feedback") {
+      setChecked("feedback");
+    } else if (path === "/pod") {
+      setChecked("pod");
+    }
+  }, []);
+
   return (
     <div>
       <header className="border-b-2">
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 rounded-md">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <Link to="/" className="flex items-center">
-              <img
-                src="./logo.png"
-                className="mr-3 h-6 sm:h-9"
-                alt="Logo"
-              />
+              <img src="./logo.png" className="mr-3 h-6 sm:h-9" alt="Logo" />
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                 Knuth HUB
               </span>
@@ -63,7 +81,12 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/"
-                    className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                    onClick={() => setChecked("home")}
+                    className={`block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent ${
+                      checked === "home"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } lg:p-0 dark:text-white`}
                     aria-current="page">
                     Home
                   </Link>
@@ -71,42 +94,72 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/events"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("events")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "events"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     Events
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/coordinators"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("coordinators")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "coordinators"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     Coordinators
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/announcement"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("announcement")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "announcement"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     Announcements
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/connect"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("connect")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "connect"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     Connect
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/feedback"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("feedback")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "feedback"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     Feedbacks
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/pod"
-                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                    onClick={() => setChecked("pod")}
+                    className={`block py-2 pr-4 pl-3 ${
+                      checked === "pod"
+                        ? "lg:text-primary-700"
+                        : "lg:text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`}>
                     POD
                   </Link>
                 </li>
