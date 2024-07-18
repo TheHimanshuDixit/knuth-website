@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,9 +15,14 @@ const Login = () => {
     console.log("Login component mounted");
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email: ", email, "Password: ", password);
+    let response = await axios.post("http://localhost:4000/api/auth/login", {
+      email: email,
+      password: password,
+    });
+
+    console.log(response.data);
   };
 
   return (
