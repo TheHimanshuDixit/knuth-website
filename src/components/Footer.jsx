@@ -9,11 +9,7 @@ const Footer = () => {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link to="/" className="flex items-center">
-                <img
-                  src="./logo.png"
-                  className="mr-3 h-8"
-                  alt="Logo"
-                />
+                <img src="./logo.png" className="mr-3 h-8" alt="Logo" />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                   Knuth HUB
                 </span>
@@ -21,18 +17,22 @@ const Footer = () => {
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Resources
-                </h2>
-                <ul className="text-gray-600 dark:text-gray-400">
+                <ul className="text-gray-600 dark:text-gray-400 font-semibold">
                   <li className="mb-4">
-                    <Link to="https://flowbite.com" className="hover:underline">
-                      Flowbite
+                    <Link to="/announcement" className="hover:underline">
+                      Announcements
+                    </Link>
+                  </li>
+                  <li className="mb-4">
+                    <Link to="/events" className="hover:underline">
+                      Events
                     </Link>
                   </li>
                   <li>
-                    <Link to="https://tailwindcss.com/" className="hover:underline">
-                      Tailwind CSS
+                    <Link
+                      to="/connect"
+                      className="hover:underline">
+                      Connect
                     </Link>
                   </li>
                 </ul>
@@ -44,14 +44,14 @@ const Footer = () => {
                 <ul className="text-gray-600 dark:text-gray-400">
                   <li className="mb-4">
                     <Link
-                      to="https://github.com/themesberg/flowbite"
+                      to="https://www.instagram.com/knuth_jiit?igshid=MzRlODBiNWFlZA%3D%3D"
                       className="hover:underline ">
-                      Github
+                      Instagram
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to="https://discord.gg/4eeurUVvTy"
+                      to="https://discord.gg/nwkVPtUs"
                       className="hover:underline">
                       Discord
                     </Link>

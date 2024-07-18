@@ -32,27 +32,63 @@ const router = createBrowserRouter([
   },
   {
     path: "announcement",
-    element: <Announcements />,
+    element: (
+      <>
+        <Navbar />
+        <Announcements />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "connect",
-    element: <Connect />,
+    element: (
+      <>
+        <Navbar />
+        <Connect />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "coordinators",
-    element: <Coordinators />,
+    element: (
+      <>
+        <Navbar />
+        <Coordinators />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "events",
-    element: <Events/>,
+    element: (
+      <>
+        <Navbar />
+        <Events />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "feedback",
-    element: <Feedback />,
+    element: (
+      <>
+        <Navbar />
+        <Feedback />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "pod",
-    element: <POD />,
+    element: (
+      <>
+        <Navbar />
+        <POD />
+        <Footer />
+      </>
+    ),
   },
 ]);
 
